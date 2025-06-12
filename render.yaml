@@ -3,7 +3,7 @@ services:
     name: hms-backend
     env: python
     buildCommand: "./.render/build.sh"
-    startCommand: "gunicorn hms_backend.wsgi:application"
+    startCommand: "daphne -b 0.0.0.0 -p 10000 hms_backend.asgi:application"
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: hms_backend.settings
