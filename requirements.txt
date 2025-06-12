@@ -1,0 +1,12 @@
+Django>=5.2
+djangorestframework
+numpy
+tensorflow
+xgboost
+scikit-learn
+Pillow
+python-dotenv
+gunicorn
+whitenoise
+django-cors-headers
+twilio

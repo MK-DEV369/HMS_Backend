@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: hms-backend
+    env: python
+    buildCommand: "./.render/build.sh"
+    startCommand: "gunicorn hms_backend.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: hms_backend.settings
+      - key: PYTHON_VERSION
+        value: 3.10
+      - key: ALLOWED_HOSTS
+        value: "*"
+      - key: DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        value: django-insecure-@te*2)qh&9n8p^m_t@b$x@n!qtwh)ic2la5(fsbqm3*$8sm@5u
+      - key: CORS_ORIGIN_WHITELIST
+        value: https://hms-brain.vercel.app
+      - key: TWILIO_AUTH_TOKEN
+        value: 7875f5602fab0ab5c64b1dda46e73d12
+      - key: TWILIO_PHONE_NUMBER
+        value: +15677071498
